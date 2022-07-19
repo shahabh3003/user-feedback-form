@@ -1,3 +1,5 @@
-<hero-icon name="star" hostDisplay="inlineBlock" type="solid" class="w-4 h-4 text-gray-600 hover:text-gray-500"></hero-icon>jbiybvuycd
-<hero-icon name="star" hostDisplay="inlineBlock" type="solid" class="w-4 h-4 text-gray-600 hover:text-gray-500"></hero-icon>jbiybvuycd
-<hero-icon name="star" hostDisplay="inlineBlock" type="solid" class="w-4 h-4 text-gray-600 hover:text-gray-500"></hero-icon>y
+<form [formGroup]="form">
+  <!-- rating to be sent to backend -->
+  <div>Rating: {{form.value.rating}}</div>
+  <ngx-star-rating class="stars" formControlName="rating" [id]="'rating'"></ngx-star-rating>
+</form>

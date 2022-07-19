@@ -8,6 +8,8 @@ import { FormComponent } from './components/form/form.component';
 import { InputComponent } from './components/input/input.component';
 import { StarComponent } from './components/star/star.component';
 import {menu, HeroIconModule} from 'ng-heroicon';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,9 @@ import {menu, HeroIconModule} from 'ng-heroicon';
         attachDefaultDimensionsIfNoneFound: true, // default ‘false’
       }
     ),
+    NgxStarRatingModule,
+    FormsModule,
+    ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
