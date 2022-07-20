@@ -6,7 +6,6 @@ import { ViewEncapsulation } from '@angular/core';
   selector: 'app-star',
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.css'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class StarComponent implements OnInit {
 

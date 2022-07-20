@@ -1,5 +1,5 @@
 <form [formGroup]="form">
   <!-- rating to be sent to backend -->
   <div>Rating: {{form.value.rating}}</div>
-  <ngx-star-rating class="stars" formControlName="rating" [id]="'rating'"></ngx-star-rating>
+  <ngx-star-rating class="stars flex flex-start mt-1" formControlName="rating" [id]="'rating'"></ngx-star-rating>
 </form>
