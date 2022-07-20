@@ -31,6 +31,7 @@ export class FormComponent implements OnInit {
     this.inputLabel = '';
     this.inputType = '';
     this.inputLabelArr = this.inputService.getInputLabel();
+    console.log(this.inputLabelArr);
     this.inputTypeArr = this.inputService.getInputType();
   }
 
