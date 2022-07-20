@@ -1,4 +1,3 @@
-import { InputService } from './../../services/input.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-form',
@@ -7,14 +6,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  giveInput: boolean = false;
-  inputType: string = '';
-  inputLabel: string = '';
-  inputTypeArr: string[] = [];
-  inputLabelArr: string[] = [];
-  inputFieldData: any = {};
+  public giveInput: boolean = false;
 
-  constructor(public inputService: InputService) { }
+  public inputElements = {
+    label : "",
+    type : ""
+  }
+
+  // if we can declare a map here work is easy but trouble using a map
+  public inputElementsAr: {
+    label : string,
+    type : string
+  }[] = [];
+
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -25,14 +30,18 @@ export class FormComponent implements OnInit {
   }
 
   addInput(){
-    this.inputService.setInputLabel(this.inputLabel);
-    this.inputService.setInputType(this.inputType);
+    console.log(this.inputElements);
+
+    let tempObj = {
+      label : this.inputElements.label,
+      type : this.inputElements.type,
+    }
+    this.inputElementsAr.push(tempObj);
+    //use if condition and check for the type.
+    console.log(this.inputElementsAr);//objects array
+    this.inputElements.label = "";
+    this.inputElements.type = "";
     this.giveInput = false;
-    this.inputLabel = '';
-    this.inputType = '';
-    this.inputLabelArr = this.inputService.getInputLabel();
-    console.log(this.inputLabelArr);
-    this.inputTypeArr = this.inputService.getInputType();
   }
 
 }
