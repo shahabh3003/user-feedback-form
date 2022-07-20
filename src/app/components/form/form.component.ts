@@ -1,5 +1,5 @@
+import { InputService } from './../../services/input.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  giveInput: boolean = false;
+  inputType: string = '';
+  inputLabel: string = '';
+  inputTypeArr: string[] = [];
+  inputLabelArr: string[] = [];
+  inputFieldData: any = {};
+
+  constructor(public inputService: InputService) { }
 
   ngOnInit(): void {
+  }
+
+  inputFields() {
+    console.log('click');
+    this.giveInput = true;
+  }
+
+  addInput(){
+    this.inputService.setInputLabel(this.inputLabel);
+    this.inputService.setInputType(this.inputType);
+    this.giveInput = false;
+    this.inputLabel = '';
+    this.inputType = '';
+    this.inputLabelArr = this.inputService.getInputLabel();
+    this.inputTypeArr = this.inputService.getInputType();
   }
 
 }
