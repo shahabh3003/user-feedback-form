@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 
+export interface InputElements {
+  label : string,
+  type : string
+}
+
 @Injectable({
   providedIn: 'root'
 })

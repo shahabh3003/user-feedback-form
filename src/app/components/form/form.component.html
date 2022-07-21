@@ -1,20 +1,33 @@
 <h1>How is your opportunity management experience?</h1>
-<div class="flex justify-end w-40">
-  <button class="border-solid border-2 rounded-md" (click)="inputFields()">
-    <clr-icon shape="plus" size="20" title="Add Input" class="is-info has-alert"></clr-icon>
-  </button>
-</div>
-<div *ngIf="giveInput">
-  <clr-input-container>
-    <label></label>
-    <input clrInput type="text" placeholder="Give Label" name="inputLabel" [(ngModel)]="inputLabel" />
-    <input clrInput type="text" placeholder="Give Input Type" [(ngModel)]="inputType" />
-  </clr-input-container>
-  <button (click)="addInput()" class="border-solid border-2 rounded-md" >Add Input</button>
-</div>
+
+<br>
 
 <app-star></app-star>
-<app-input inputLabel="Comments"></app-input>
-<div *ngFor="let i of inputLabelArr">
-  <app-input [inputLabel]="i"></app-input>
+
+<br>
+
+<div class="flex justify-end w-40">
+    <button class="border-solid border-2 rounded-md" (click)="inputFields()">
+      <clr-icon shape="plus" size="20" title="Add Input" class="is-info has-alert"></clr-icon>
+    </button>
+</div>
+
+<br>
+
+<div *ngIf="giveInput">
+
+    <clr-input-container>
+      <label></label>
+      <input clrInput type="text" placeholder="Give Label" [(ngModel)]="inputElements.label" />
+      <input clrInput type="text" placeholder="Give Input Type" [(ngModel)]="inputElements.type" />
+    </clr-input-container>
+
+    <button (click)="addInput()" class="border-solid border-2 rounded-md" >Add Input</button>
+</div>
+
+<br>
+
+<div *ngFor="let val of inputElementsAr">
+    <app-input [inputLabel]="val.label" [inputType]="val.type"></app-input>
+    <br>
 </div>
