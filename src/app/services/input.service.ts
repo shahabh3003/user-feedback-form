@@ -10,34 +10,20 @@ export interface InputElements {
 })
 export class InputService {
 
-  inputLabelArr: string[] = [];
-  inputTypeArr: string[] = [];
-  inputFieldData = {};
+  public inputElements: InputElements = {
+    label: "",
+    type: "",
+  };
+  // if we can declare a map here work is easy but trouble using a map
+  public inputElementsAr: InputElements[] = [];
 
   constructor() { }
 
-  setInputLabel(inputLabel: string) {
-    this.inputLabelArr.push(inputLabel);
+  setInputElements(inputElementsData: InputElements[]){
+    this.inputElementsAr = inputElementsData;
   }
 
-  getInputLabel() {
-    return this.inputLabelArr;
+  getInputElements(){
+    return this.inputElements;
   }
-
-  setInputType(inputType: string) {
-    this.inputTypeArr.push(inputType);
-  }
-
-  getInputType() {
-    return this.inputTypeArr;
-  }
-
-  setInputFieldData(inputFieldData: any) {
-    this.inputFieldData = inputFieldData;
-  }
-
-  getInputFieldData() {
-    return this.inputFieldData;
-  }
-
 }
