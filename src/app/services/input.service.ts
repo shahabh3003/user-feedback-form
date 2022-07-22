@@ -10,6 +10,14 @@ export interface InputElements {
 })
 export class InputService {
 
+  showModal = false;
+  giveInput = false;
+
+  addInput(){
+    this.showModal = true;
+    this.giveInput = true;
+  }
+
   public inputElements: InputElements = {
     label: "",
     type: "",
@@ -21,9 +29,10 @@ export class InputService {
 
   setInputElements(inputElementsData: InputElements[]){
     this.inputElementsAr = inputElementsData;
+    //console.log("Input Elements from service: ", this.inputElementsAr);
   }
 
   getInputElements(){
-    return this.inputElements;
+    return this.inputElementsAr;
   }
 }

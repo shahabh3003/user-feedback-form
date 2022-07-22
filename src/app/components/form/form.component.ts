@@ -17,29 +17,30 @@ export class FormComponent implements OnInit {
   // if we can declare a map here work is easy but trouble using a map
   public inputElementsAr: InputElements[] = [];
 
-  constructor(public inputService: InputService) { }
+  // Takes the input elements from the service and displays them in the form
+  public inputElementData: InputElements[] = [];
+
+  constructor(public inputService: InputService) {
+    console.log("Form Component Constructor");
+   }
 
   ngOnInit(): void {
-  }
-
-  inputFields() {
-    console.log('click');
-    this.giveInput = true;
+    console.log("Form Component Init");
   }
 
   addInput(){
-    console.log(this.inputElements);
-
     let tempObj = {
       label : this.inputElements.label,
       type : this.inputElements.type,
     }
     this.inputElementsAr.push(tempObj);
+    // console.log("Input Elements: ", this.inputElementsAr);
     this.inputService.setInputElements(this.inputElementsAr);
     this.getInputData();
     //use if condition and check for the type.
-    console.log(this.inputElementsAr);//objects array
+    // console.log(this.inputElementsAr);//objects array
     this.removeInput();
+    this.inputService.giveInput = false;
   }
 
   removeInput(){
@@ -49,7 +50,8 @@ export class FormComponent implements OnInit {
   }
 
   getInputData(){
-    console.log("Input Element: ", this.inputService.getInputElements());
+    this.inputElementData = this.inputService.getInputElements();
+    // console.log("Input Elemens from Service: ", this.inputElementData);
   }
 
 }

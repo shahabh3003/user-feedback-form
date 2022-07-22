@@ -9,14 +9,15 @@ import { InputComponent } from './components/input/input.component';
 import { StarComponent } from './components/star/star.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AddInputBtnComponent } from './components/add-input-btn/add-input-btn.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FormComponent,
     InputComponent,
-    StarComponent
+    StarComponent,
+    AddInputBtnComponent,
   ],
   imports: [
     BrowserModule,

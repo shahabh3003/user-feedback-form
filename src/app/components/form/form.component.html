@@ -1,33 +1,34 @@
-<h1>How is your opportunity management experience?</h1>
+<div class="container p-1">
+  <h1>How is your opportunity management experience?</h1>
 
-<br>
+  <br>
 
-<app-star></app-star>
+  <app-star></app-star>
 
-<br>
+  <div *ngIf="this.inputService.giveInput">
 
-<div class="flex justify-end w-40">
-    <button class="border-solid border-2 rounded-md" (click)="inputFields()">
-      <clr-icon shape="plus" size="20" title="Add Input" class="is-info has-alert"></clr-icon>
-    </button>
+    <div class="modal">
+      <div class="modal-dialog modal-lg" role="dialog" aria-hidden="true">
+          <div class="modal-content">
+            <clr-input-container>
+              <label></label>
+              <input clrInput type="text" placeholder="Give Label" [(ngModel)]="inputElements.label" />
+              <input clrInput type="text" placeholder="Give Input Type" [(ngModel)]="inputElements.type" />
+            </clr-input-container>
+
+            <button (click)="addInput()" class="border-solid border-2 rounded-md" >Add Input</button>
+          </div>
+      </div>
+  </div>
+  <div class="modal-backdrop" aria-hidden="true"></div>
+
+  </div>
+
+  <br>
+
+  <div *ngFor="let val of inputElementData" class="w-64">
+      <app-input [inputLabel]="val.label" [inputType]="val.type"></app-input>
+      <br>
+  </div>
 </div>
 
-<br>
-
-<div *ngIf="giveInput">
-
-    <clr-input-container>
-      <label></label>
-      <input clrInput type="text" placeholder="Give Label" [(ngModel)]="inputElements.label" />
-      <input clrInput type="text" placeholder="Give Input Type" [(ngModel)]="inputElements.type" />
-    </clr-input-container>
-
-    <button (click)="addInput()" class="border-solid border-2 rounded-md" >Add Input</button>
-</div>
-
-<br>
-
-<div *ngFor="let val of inputElementsAr">
-    <app-input [inputLabel]="val.label" [inputType]="val.type"></app-input>
-    <br>
-</div>
