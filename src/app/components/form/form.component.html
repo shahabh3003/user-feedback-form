@@ -1,5 +1,5 @@
-<div class="container p-1">
-  <h1>How is your opportunity management experience?</h1>
+<form class="container p-5">
+  <h2>How is your opportunity management experience?</h2>
 
   <br>
 
@@ -7,16 +7,15 @@
 
   <div *ngIf="this.inputService.giveInput">
 
-    <div class="modal">
+    <div class="modal rounded-lg">
       <div class="modal-dialog modal-lg" role="dialog" aria-hidden="true">
           <div class="modal-content">
             <clr-input-container>
-              <label></label>
-              <input clrInput type="text" placeholder="Give Label" [(ngModel)]="inputElements.label" />
-              <input clrInput type="text" placeholder="Give Input Type" [(ngModel)]="inputElements.type" />
+              <input class="p-2 rounded-lg m-1" clrInput name="inputElements.label" type="text" placeholder="Give Label" [(ngModel)]="inputElements.label" />
+              <input class="p-2 rounded-lg m-1" clrInput name="inputElements.type" type="text" placeholder="Give Input Type" [(ngModel)]="inputElements.type" />
             </clr-input-container>
 
-            <button (click)="addInput()" class="border-solid border-2 rounded-md" >Add Input</button>
+            <button (click)="addInput()" class="bg-cyan-800 text-white p-2 rounded-lg m-1" >Add Input</button>
           </div>
       </div>
   </div>
@@ -26,9 +25,10 @@
 
   <br>
 
-  <div *ngFor="let val of inputElementData" class="w-64">
+  <div *ngFor="let val of inputElementData" class="w-80 m-2">
       <app-input [inputLabel]="val.label" [inputType]="val.type"></app-input>
       <br>
   </div>
-</div>
+  <button class="bg-cyan-800 text-white p-2 rounded-lg ml-2" >Submit</button>
+</form>
 
