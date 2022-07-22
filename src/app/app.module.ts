@@ -10,6 +10,10 @@ import { StarComponent } from './components/star/star.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddInputBtnComponent } from './components/add-input-btn/add-input-btn.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +22,17 @@ import { AddInputBtnComponent } from './components/add-input-btn/add-input-btn.c
     InputComponent,
     StarComponent,
     AddInputBtnComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     ClarityModule,
     NgxStarRatingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]
