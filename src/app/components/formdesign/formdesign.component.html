@@ -6,11 +6,13 @@
 <input style="padding: 2px !important;" placeholder="Enter event name" type="text" name="eventName" id="eventName" [(ngModel)]="eventName">
 
 <h4 style="margin-right: 4px !important" >Event Title</h4>
-<input style="padding: 2px !important;" placeholder="Enter event title" style="margin-bottom: 2px !important;" type="text" name="eventTitle" id="eventTitle" [(ngModel)]="eventTitle">
+<input class="p-2" placeholder="Enter event title" style="margin-bottom: 1px !important;" type="text" name="eventTitle" id="eventTitle" [(ngModel)]="eventTitle">
 <br>
-<input style="padding: 2px !important;" type="checkbox" id="comments" name="comments" value="comments" unchecked>
-<label style="margin-left: 4px !important; margin-bottom: 15px !important;" for="comments">Optionally ask for comments</label>
+<input class="p-2" type="checkbox" id="comments" name="comments" value="comments" unchecked>
+<label class="mx-2" for="comments">Optionally ask for comments</label>
 
-<app-add-input-btn></app-add-input-btn>
+<div class="my-2">
+  <app-add-input-btn></app-add-input-btn>
+</div>
 
-<button class="bg-cyan-800 text-white p-2 rounded-lg ml-2" (click)="onSubmit()">Submit</button>
+<button class="bg-cyan-800 text-white p-2 rounded-lg my-2" (click)="onSubmit()">Submit</button>

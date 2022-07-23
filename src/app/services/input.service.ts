@@ -39,14 +39,14 @@ export class InputService {
     label: "",
     type: "",
   };
-  // if we can declare a map here work is easy but trouble using a map
+
+  // map of input elements
   public inputElementsAr: InputElements[] = [];
 
   constructor() { }
 
   setInputElements(inputElementsData: InputElements[]){
     this.inputElementsAr = inputElementsData;
-    //console.log("Input Elements from service: ", this.inputElementsAr);
   }
 
   getInputElements(){
