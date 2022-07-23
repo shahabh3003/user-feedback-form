@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormdesignComponent implements OnInit {
 
+  // Event Details
   eventName: string;
   eventTitle: string;
 
