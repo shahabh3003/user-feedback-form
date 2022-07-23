@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FormdesignComponent } from './components/formdesign/formdesign.component';
+import { SubcriptionlistComponent } from './components/subcriptionlist/subcriptionlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    FormdesignComponent,
+    SubcriptionlistComponent,
   ],
   imports: [
     BrowserModule,

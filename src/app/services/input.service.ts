@@ -10,12 +10,29 @@ export interface InputElements {
 })
 export class InputService {
 
+  eventName: string;
+  eventTitle: string;
+
   showModal = false;
   giveInput = false;
 
   addInput(){
     this.showModal = true;
     this.giveInput = true;
+  }
+
+  // setter for Event Details
+  setEventDetails(eventName: string, eventTitle: string){
+    this.eventName = eventName;
+    this.eventTitle = eventTitle;
+  }
+
+  // getter for Event Details
+  getEventDetails(){
+    return {
+      eventName: this.eventName,
+      eventTitle: this.eventTitle
+    }
   }
 
   public inputElements: InputElements = {

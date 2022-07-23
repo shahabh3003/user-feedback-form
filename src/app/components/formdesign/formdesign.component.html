@@ -1,0 +1,16 @@
+<h3 style="margin-bottom: 15px !important ;">Configure your subscription</h3>
+<input type="checkbox" id="subscription" name="subscription" value="subscription" checked>
+<label style="margin-left: 4px !important" for="subscription">Active</label>
+
+<h3 style="margin-right: 4px !important" >Event Name</h3>
+<input style="padding: 2px !important;" placeholder="Enter event name" type="text" name="eventName" id="eventName" [(ngModel)]="eventName">
+
+<h4 style="margin-right: 4px !important" >Event Title</h4>
+<input style="padding: 2px !important;" placeholder="Enter event title" style="margin-bottom: 2px !important;" type="text" name="eventTitle" id="eventTitle" [(ngModel)]="eventTitle">
+<br>
+<input style="padding: 2px !important;" type="checkbox" id="comments" name="comments" value="comments" unchecked>
+<label style="margin-left: 4px !important; margin-bottom: 15px !important;" for="comments">Optionally ask for comments</label>
+
+<app-add-input-btn></app-add-input-btn>
+
+<button class="bg-cyan-800 text-white p-2 rounded-lg ml-2" (click)="onSubmit()">Submit</button>
