@@ -15,6 +15,6 @@ export class LoginComponent implements OnInit {
 
   submit(){
     console.log("submit");
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/subscriptions']);
   }
 }
