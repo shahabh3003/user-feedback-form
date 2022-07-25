@@ -11,9 +11,8 @@
         <h2>
           <span class="text-2xl font-bold">Register</span>
         </h2>
-        <input clrInput class="w-64 p-2 rounded-lg m-1" type="text" class="form-control" placeholder="Enter name"  />
-        <input clrInput class="w-64 p-2 rounded-lg m-1" type="text" class="form-control" placeholder="Enter email"  />
-        <input clrInput class="one p-2 rounded-lg m-1" type="password" class="form-control" placeholder="Enter password" />
+        <input clrInput class="w-64 p-2 rounded-lg m-1" type="text" class="form-control" placeholder="Enter username" name="username"  [(ngModel)]="username" />
+        <input clrInput class="one p-2 rounded-lg m-1" type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="password" />
         <button class="w-48 bg-cyan-800 text-white p-2 rounded-lg m-1 items-center" (click)="submit()" >Register</button>
         <br>
         <label>Have an account?</label>
