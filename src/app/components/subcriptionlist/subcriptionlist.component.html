@@ -1,3 +1,18 @@
-<h1>Your current subscriptions</h1>
-
-<button (click)="addNew()">Add new</button>
+<app-header></app-header>
+<div class="flex justify-center items-center h-screen">
+  <div class="border-solid border-2 rounded-md w-96">
+    <div class="flex justify-center">
+      <h3 class="mr-10">Your current subscriptions</h3>
+      <button class="bg-cyan-800 text-white p-1 rounded-lg ml-10 my-4" (click)="addNew()">Add new</button>
+    </div>
+    <br>
+    <div class="flex flex-col justify-center m-2">
+      <ul>
+        <li *ngFor="let idx of subscriptionList" class="border-solid border-2 rounded-md bg-slate-300 p-2 flex justify-between" >
+          <span class="text-md text-black font-bold">{{idx.eventName}}</span>
+          <span class="text-md text-black font-bold">{{idx.eventTitle}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

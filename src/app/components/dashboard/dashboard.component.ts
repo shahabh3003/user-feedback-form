@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  scriptContent: string = '';
+  showModal: boolean = false;
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
+
+  navigate(){
+    this.router.navigate(['/subscriptions']);
+  }
+
+  showModalF(){
+    this.showModal = true;
+  }
+
+  copy(){
+    console.log("Copying...");
+    this.showModal = false;
+  }
+
+
 
 }

@@ -1,4 +1,4 @@
-import { InputService } from './../../services/input.service';
+import { EventData, InputService } from './../../services/input.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,13 +12,22 @@ export class FormdesignComponent implements OnInit {
   eventName: string;
   eventTitle: string;
 
+  eventDetails: EventData[] = [];
+
   constructor(public inputService: InputService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    this.inputService.setEventDetails(this.eventName, this.eventTitle);
+    this.inputService.setEventTitle(this.eventTitle);
+    this.eventDetails.push({
+      eventName: this.eventName,
+      eventTitle: this.eventTitle,
+    })
+    // console.log("Event Details: ", this.eventDetails);
+    this.inputService.setEventDetails(this.eventDetails);
+    console.log("Event Details from service: ", this.inputService.getEventDetails());
   }
 
 }

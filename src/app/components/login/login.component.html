@@ -1,17 +1,24 @@
 <div class="abc">
-  <div class="col-span-4 col-start-3 border-solid border-2 rounded-md w-80 flex justify-center items-center">
-    <form action="" class="w-80">
-      <div class="flex flex-col justify-center items-center">
-        <h2>
-          <span class="text-2xl font-bold">Login</span>
-        </h2>
-        <input clrInput type="text" class="form-control" placeholder="Enter email"  />
-        <input clrInput type="password" class="form-control" placeholder="Enter password" />
-        <button class="w-48 bg-cyan-800 text-white p-2 rounded-lg m-1 items-center" (click)="submit()" >Login</button>
-        <br>
-        <label>Dont have an account?</label>
-        <a routerLink="/register" class="text-cyan-800">Signup</a>
-      </div>
-    </form>
+  <div class="col-span-4 col-start-1 w-screen flex justify-evenly items-center py-4">
+    <div>
+      <h1>Get Customer Feedback</h1>
+      <p>Are you looking to get in-the moment <br> customer feedback from your webapps?</p>
+      <p>And, You dont have the resources to <br> build this in your apps. <br> If yes, we are here to help you!!!</p>
+    </div>
+    <div>
+      <form action="" class="w-80">
+        <div class="flex border-solid border-2 rounded-md flex-col justify-center items-center">
+          <h2>
+            <span class="text-2xl font-bold">Login</span>
+          </h2>
+          <input clrInput type="text" class="form-control" placeholder="Enter email"  />
+          <input clrInput type="password" class="form-control" placeholder="Enter password" />
+          <button class="w-48 bg-cyan-800 text-white p-2 rounded-lg m-1 items-center" (click)="submit()" >Login</button>
+          <br>
+          <label>Dont have an account?</label>
+          <a routerLink="/register" class="text-cyan-800">Signup</a>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

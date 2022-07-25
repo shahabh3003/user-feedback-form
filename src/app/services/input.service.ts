@@ -5,6 +5,11 @@ export interface InputElements {
   type : string
 }
 
+export interface EventData {
+  eventName: string,
+  eventTitle: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +17,32 @@ export class InputService {
 
   eventName: string;
   eventTitle: string;
+
+  // methods for event details
+  public eventData: EventData = {
+    eventName: '',
+    eventTitle: '',
+  }
+
+  public eventDataAr: EventData[] = []
+
+  // setter for Event Details
+  setEventDetails(eventDataAr: EventData[]){
+    this.eventDataAr = eventDataAr;
+  }
+
+  // getter for Event Details
+  getEventDetails(){
+    return this.eventDataAr;
+  }
+
+  setEventTitle(eventTitle: string){
+    this.eventTitle = eventTitle;
+  }
+
+  getEventTitle(){
+    return this.eventTitle;
+  }
 
   showModal = false;
   giveInput = false;
@@ -21,19 +52,6 @@ export class InputService {
     this.giveInput = true;
   }
 
-  // setter for Event Details
-  setEventDetails(eventName: string, eventTitle: string){
-    this.eventName = eventName;
-    this.eventTitle = eventTitle;
-  }
-
-  // getter for Event Details
-  getEventDetails(){
-    return {
-      eventName: this.eventName,
-      eventTitle: this.eventTitle
-    }
-  }
 
   public inputElements: InputElements = {
     label: "",

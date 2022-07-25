@@ -1,3 +1,4 @@
+import { InputService, EventData } from './../../services/input.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,9 +9,16 @@ import { Router } from '@angular/router';
 })
 export class SubcriptionlistComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  subscriptionList: EventData[] = [];
+
+  constructor(public router: Router, public inputService: InputService) {
+    this.subscriptionList = this.inputService.getEventDetails();
+    console.log("Subscription List: ", this.subscriptionList);
+  }
 
   ngOnInit(): void {
+    this.subscriptionList = this.inputService.getEventDetails();
+    console.log("Subscription List: ", this.subscriptionList);
   }
 
   addNew() {
