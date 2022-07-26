@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class SubcriptionlistComponent implements OnInit {
 
   subscriptionList: EventData[] = [];
-  username = '';
+  username = this.authService.username;
   body = {};
   requestOptions = {};
   myHeaders = new Headers();
@@ -19,9 +19,9 @@ export class SubcriptionlistComponent implements OnInit {
   fetchData() {
     const uri = 'http://localhost:8080/adminForms';
     this.body = {
-      username: (this.username),
+      username: this.username,
     }
-    //console.log("Body: ", this.body);
+    console.log("Body: ", this.body);
     this.requestOptions = {
       method: 'POST',
       headers: {
@@ -35,14 +35,14 @@ export class SubcriptionlistComponent implements OnInit {
       .then(response => response.text())
       .then(result => {
         console.log("success: ", result);
-        // this.subscriptionList = result;
+        this.subscriptionList = JSON.parse(result);
         console.log("Subscription List: ", this.subscriptionList);
       })
       .catch(error => console.log('error', error));
   }
 
   constructor(public router: Router, public inputService: InputService, public authService: AuthService) {
-    this.username = this.authService.getUsername();
+    //this.username = this.authService.getUsername();
     console.log("Username: ", this.username);
     this.fetchData();
   }

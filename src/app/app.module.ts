@@ -11,11 +11,11 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddInputBtnComponent } from './components/add-input-btn/add-input-btn.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormdesignComponent } from './components/formdesign/formdesign.component';
 import { SubcriptionlistComponent } from './components/subcriptionlist/subcriptionlist.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +23,8 @@ import { SubcriptionlistComponent } from './components/subcriptionlist/subcripti
     FormComponent,
     InputComponent,
     StarComponent,
+    LoginComponent, 
     AddInputBtnComponent,
-    LoginComponent,
     RegisterComponent,
     DashboardComponent,
     FormdesignComponent,
@@ -36,7 +36,7 @@ import { SubcriptionlistComponent } from './components/subcriptionlist/subcripti
     NgxStarRatingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

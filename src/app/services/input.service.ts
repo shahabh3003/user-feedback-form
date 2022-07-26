@@ -6,8 +6,8 @@ export interface InputElements {
 }
 
 export interface EventData {
-  eventName: string,
-  eventTitle: string
+  event: string,
+  productName: string
 }
 
 @Injectable({
@@ -20,8 +20,8 @@ export class InputService {
 
   // methods for event details
   public eventData: EventData = {
-    eventName: '',
-    eventTitle: '',
+    event: '',
+    productName: '',
   }
 
   public eventDataAr: EventData[] = []

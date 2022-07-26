@@ -29,9 +29,10 @@ export class LoginComponent implements OnInit {
     }
     this.requestOptions = {
       method: 'POST',
-      headers: new Headers(),
-      body: this.body,
-      redirect: 'follow'
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body:JSON.stringify(this.body),
     };
     fetch(uri, this.requestOptions)
       .then(response => response.text())
