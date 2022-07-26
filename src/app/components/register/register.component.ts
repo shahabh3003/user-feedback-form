@@ -53,6 +53,11 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/']);
     });
     console.log("res",res);
+<<<<<<< HEAD
     this.router.navigate(['/subscriptions']);
+=======
+    alert("registeration success");
+    this.router.navigate(['/']);
+>>>>>>> b2a44c1c929cc77fae6a3c725fb8d659dfea2b70
   }
 }

@@ -2,15 +2,16 @@
 <input type="checkbox" id="subscription" name="subscription" value="subscription" checked>
 <label style="margin-left: 4px !important" for="subscription">Active</label>
 
-<h3 style="margin-right: 4px !important" >Event Name</h3>
+<h5 style="margin-right: 4px !important" >Event Name</h5>
 <input style="padding: 2px !important;" placeholder="Enter event name" type="text" name="eventName" id="eventName" [(ngModel)]="eventName">
 
-<h4 style="margin-right: 4px !important" >Event Title</h4>
+<h5 style="margin-right: 4px !important" >Event Title</h5>
 <input class="p-2" placeholder="Enter event title" style="margin-bottom: 1px !important;" type="text" name="eventTitle" id="eventTitle" [(ngModel)]="eventTitle">
 <br>
 <input class="p-2" type="checkbox" id="comments" name="comments" value="comments" unchecked>
 <label class="mx-2" for="comments">Optionally ask for comments</label>
-
+<h5>After how many days do u want <br>the feedback to be prompted?</h5>
+<input type="number" placeholder="Enter number of days" class="p-2">
 <div class="my-2">
   <app-add-input-btn></app-add-input-btn>
 </div>

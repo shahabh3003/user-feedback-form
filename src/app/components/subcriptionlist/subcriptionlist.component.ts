@@ -41,7 +41,10 @@ export class SubcriptionlistComponent implements OnInit {
       .catch(error => console.log('error', error));
   }
 
-  constructor(public router: Router, public inputService: InputService, public authService: AuthService) {
+  constructor(public router: Router, public inputService: InputService, 
+    public authService: AuthService,
+    
+    ) {
     //this.username = this.authService.getUsername();
     console.log("Username: ", this.username);
     this.fetchData();

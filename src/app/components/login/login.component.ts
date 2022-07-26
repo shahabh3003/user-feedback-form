@@ -39,7 +39,10 @@ export class LoginComponent implements OnInit {
       .then(result => {
         //console.log("success: ",result);
         this.authService.setUsername(this.username);
-        this.router.navigate(['/subscriptions']);
+        alert("Login Successful");
+        this.router.navigate(['/subscriptions',{
+          username: this.username
+        }]);
       })
       .catch(error => {
         alert(error.message);

@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'subscriptions',
-    component: SubcriptionlistComponent
+    component: SubcriptionlistComponent,
   },
 ]
 
