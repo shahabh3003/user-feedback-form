@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormdesignComponent } from './components/formdesign/formdesign.component';
 import { SubcriptionlistComponent } from './components/subcriptionlist/subcriptionlist.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { SubcriptionlistComponent } from './components/subcriptionlist/subcripti
     FormComponent,
     InputComponent,
     StarComponent,
-    LoginComponent, 
+    LoginComponent,
     AddInputBtnComponent,
     RegisterComponent,
     DashboardComponent,
