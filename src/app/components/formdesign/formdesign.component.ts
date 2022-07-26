@@ -1,6 +1,7 @@
 import { EventData, InputService } from './../../services/input.service';
 import { Component, OnInit } from '@angular/core';
 import { InputElements } from 'src/app/services/input.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-formdesign',
@@ -16,7 +17,8 @@ export class FormdesignComponent implements OnInit {
 
   eventDetails: EventData[] = [];
 
-  constructor(public inputService: InputService) { }
+  constructor(public inputService: InputService,
+    public authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +34,7 @@ export class FormdesignComponent implements OnInit {
     console.log("Event Details from service: ", this.inputService.getEventDetails());
     const uri = 'http://localhost:8080/configureForm';
     this.body = {
+      username: this.authService.getUsername(),
       inputElements: this.inputService.getInputElements(),
       eventDetailsAr: this.eventDetails,
     }
@@ -45,6 +48,6 @@ export class FormdesignComponent implements OnInit {
           console.log(err);
           window.alert('fetch cant be performed for register');
       });
-      console.log("res",res);
+      console.log("formFDe",res);
     }
 }

@@ -1,18 +1,18 @@
-<div>
+<!-- <div>
   <app-header></app-header>
   <div class="grid grid-cols-5 gap-1 mt-10">
-    <div class="col-span-4 col-start-3 border-solid border-2 rounded-md w-80">
+    <div class="col-span-4 col-start-2 border-solid border-2 rounded-md w-80">
       <app-form></app-form>
     </div>
-    <div class="col-span-1 col-start-5 mx-5 border-solid border-1 rounded-md " style="margin-top: -300px !important;">
+    <div class="col-span-1 col-start-4 mx-5 border-solid border-1 rounded-md " style="margin-top: -300px !important;">
       <app-formdesign></app-formdesign>
       <br>
       <button class="bg-cyan-800 text-white p-2 rounded-lg mx-1 my-2" (click)="navigate()" >Return to Subscription view</button>
       <button class="bg-cyan-800 text-white p-2 rounded-lg mx-1 my-2" (click)="showModalF()" >Save</button>
     </div>
   </div>
-</div>
-<div *ngIf="showModal" >
+</div> -->
+<!-- <div *ngIf="showModal" >
   <div class="modal rounded-lg ">
     <div class="modal-dialog modal-lg" role="dialog" aria-hidden="true">
       <div class="modal-content">
@@ -24,4 +24,22 @@
           <button (click)="copy()" class="bg-cyan-800 text-white p-2 rounded-lg m-1" >Copy</button>
         </div>
     </div>
+</div> -->
+<app-header></app-header>
+
+<div class="feedback"> 
+  <div class="feedback-data-left">
+    <app-form class="border-solid border-2 rounded-md"></app-form>
+  </div>
+  <div class="feedback-data-right">
+    <app-formdesign class=" p-3 border-solid border-l-2"></app-formdesign>
+  </div>
+
+</div>
+<div class="footer rounded-lg mx-16 px-10">
+  
+    <button class="bg-cyan-800 text-white p-2 rounded-lg m-1 items-center">Go to subscription stats</button>
+    <button class="bg-cyan-800 text-white p-2 rounded-lg m-1 items-center">Get Script</button>
+    <button class="bg-cyan-800 text-white p-2 rounded-lg m-1 items-center">Return to subscription</button>
+  
 </div>

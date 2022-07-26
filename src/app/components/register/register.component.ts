@@ -49,7 +49,11 @@ export class RegisterComponent implements OnInit {
     }).catch((err)=>{
         console.log(err);
         window.alert('fetch cant be performed for register');
+        alert(err.message);
+        this.router.navigate(['/']);
     });
     console.log("res",res);
+    alert("registeration success");
+    this.router.navigate(['/']);
   }
 }
