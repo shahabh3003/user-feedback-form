@@ -29,6 +29,8 @@ export class DashboardComponent implements OnInit {
     this.showModal = false;
   }
 
-
+  navigateToUserform(){
+    this.router.navigate(['/userform']);
+  }
 
 }

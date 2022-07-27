@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="flex justify-center items-center h-screen">
   <div class="border-solid border-2 rounded-md w-96">
     <div class="flex justify-center">
@@ -6,9 +5,9 @@
       <button class="bg-cyan-800 text-white p-1 rounded-lg ml-10 my-4" (click)="addNew()">Add new</button>
     </div>
     <br>
-    <div class="flex flex-col justify-center m-2">
+    <div class="flex flex-col justify-center m-2" >
       <ul>
-        <li *ngFor="let idx of subscriptionList" class="border-solid border-2 rounded-md bg-slate-300 p-2 flex justify-between" >
+        <li *ngFor="let idx of subscriptionList" class="border-solid border-2 rounded-md bg-slate-300 p-2 flex justify-between " (click)="openForm(idx._id)">
           <span class="text-md text-black font-bold">{{idx.productName}}</span>
           <span class="text-md text-black font-bold">{{idx.event}}</span>
         </li>

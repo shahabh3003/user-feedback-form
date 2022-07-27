@@ -16,6 +16,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormdesignComponent } from './components/formdesign/formdesign.component';
 import { SubcriptionlistComponent } from './components/subcriptionlist/subcriptionlist.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserformComponent } from './components/userform/userform.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LoginComponent } from './components/login/login.component';
     DashboardComponent,
     FormdesignComponent,
     SubcriptionlistComponent,
+    UserformComponent,
   ],
   imports: [
     BrowserModule,

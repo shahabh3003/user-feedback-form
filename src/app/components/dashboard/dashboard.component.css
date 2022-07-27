@@ -1,24 +1,25 @@
 .feedback {
-    display: flex;
-    flex-wrap: wrap;
-    height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 .feedback-data-left {
-    flex-grow: 7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex-grow: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .feedback-data-right {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .footer {
-    display: flex;
-    justify-content: space-evenly;
-    
-    /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 800px;
+  left: 500px;
+  border: 2px solid black;
 }

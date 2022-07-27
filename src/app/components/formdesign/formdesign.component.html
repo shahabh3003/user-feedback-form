@@ -11,7 +11,7 @@
 <input class="p-2" type="checkbox" id="comments" name="comments" value="comments" unchecked>
 <label class="mx-2" for="comments">Optionally ask for comments</label>
 <h5>After how many days do u want <br>the feedback to be prompted?</h5>
-<input type="number" placeholder="Enter number of days" class="p-2">
+<input type="number" placeholder="Enter number of days" class="p-2" name="cadence" [(ngModel)]="cadence" >
 <div class="my-2">
   <app-add-input-btn></app-add-input-btn>
 </div>

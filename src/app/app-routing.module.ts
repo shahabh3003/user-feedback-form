@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SubcriptionlistComponent } from './components/subcriptionlist/subcriptionlist.component';
+import { UserformComponent } from './components/userform/userform.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,13 @@ const routes: Routes = [
     path: 'subscriptions',
     component: SubcriptionlistComponent,
   },
+  {
+    path: 'userform',
+    component: UserformComponent,
+    data: {
+      id: '',
+    }
+  }
 ]
 
 @NgModule({

@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class SubcriptionlistComponent implements OnInit {
 
-  subscriptionList: EventData[] = [];
-  username = this.authService.username;
+  subscriptionList: any = [];
+  username = '';
   body = {};
   requestOptions = {};
   myHeaders = new Headers();
@@ -41,12 +41,14 @@ export class SubcriptionlistComponent implements OnInit {
       .catch(error => console.log('error', error));
   }
 
-  constructor(public router: Router, public inputService: InputService, 
+  constructor(
+    public router: Router,
+    public inputService: InputService,
     public authService: AuthService,
-    
     ) {
-    //this.username = this.authService.getUsername();
-    console.log("Username: ", this.username);
+      this.authService.fetchUsername();
+      this.username = this.authService.getUsername();
+      console.log("Username getusername: ", this.authService.getUsername());
     this.fetchData();
   }
 
@@ -55,6 +57,10 @@ export class SubcriptionlistComponent implements OnInit {
 
   addNew() {
     this.router.navigate(['/dashboard']);
+  }
+
+  openForm(id: any){
+    this.router.navigate(['/userform'], { queryParams: { id: id } });
   }
 
 }

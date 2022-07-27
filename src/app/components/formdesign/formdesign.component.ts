@@ -13,6 +13,7 @@ export class FormdesignComponent implements OnInit {
   // Event Details
   eventName: string;
   eventTitle: string;
+  cadence: number;
   body = {};
 
   eventDetails: EventData[] = [];
@@ -31,12 +32,13 @@ export class FormdesignComponent implements OnInit {
     })
     // console.log("Event Details: ", this.eventDetails);
     this.inputService.setEventDetails(this.eventDetails);
-    console.log("Event Details from service: ", this.inputService.getEventDetails());
+    //console.log("Event Details from service: ", this.inputService.getEventDetails());
     const uri = 'http://localhost:8080/configureForm';
     this.body = {
       username: this.authService.getUsername(),
       inputElements: this.inputService.getInputElements(),
       eventDetailsAr: this.eventDetails,
+      cadence: this.cadence,
     }
     const res = await fetch(uri,{
       method:"POST",
@@ -44,10 +46,14 @@ export class FormdesignComponent implements OnInit {
         "Content-Type" : "application/json"
       },
       body:JSON.stringify(this.body)
-      }).catch((err)=>{
+      })
+      .then(res => res.json())
+      .then(res => {
+        console.log("Success response: ", res);
+      })
+      .catch((err)=>{
           console.log(err);
-          window.alert('fetch cant be performed for register');
+          window.alert('fetch cant be performed for formdesign');
       });
-      console.log("formFDe",res);
     }
 }

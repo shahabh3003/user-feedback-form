@@ -1,0 +1,15 @@
+<div class="flex flex-column justify-center items-center h-screen">
+  <div class="border-solid border-2 rounded-md">
+      <div class="p-4">
+        <h3 class="flex justify-center pb-4" >{{ this.userFormData.productName }}</h3>
+        <app-star></app-star>
+        <div *ngFor="let idx of this.questions" >
+          <app-input [inputLabel]="idx.questionText" [inputType]="idx.type" ></app-input>
+          <br>
+        </div>
+        <input type="text" [value]="this.userFormData._id" hidden readonly />
+        <br>
+        <button class="bg-cyan-800 text-white p-2 rounded-lg" (click)="submit()">Submit</button>
+      </div>
+  </div>
+</div>
