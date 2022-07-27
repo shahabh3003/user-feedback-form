@@ -25,6 +25,8 @@ export class FormdesignComponent implements OnInit {
   }
 
   async onSubmit(){
+    this.inputService.setScript(true);
+    console.log("Show Script: ", this.inputService.getScript());
     this.inputService.setEventTitle(this.eventTitle);
     this.eventDetails.push({
       event: this.eventName,
@@ -49,11 +51,11 @@ export class FormdesignComponent implements OnInit {
       })
       .then(res => res.json())
       .then(res => {
-        console.log("Success response: ", res);
+        //console.log("Success response: ", res);
       })
       .catch((err)=>{
           console.log(err);
-          window.alert('fetch cant be performed for formdesign');
+          alert('fetch cant be performed for formdesign');
       });
     }
 }

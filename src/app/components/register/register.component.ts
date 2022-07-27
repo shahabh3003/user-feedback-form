@@ -19,41 +19,38 @@ export class RegisterComponent implements OnInit {
   }
 
   async submit(){
-    //console.log("submit", this.username," : ", this.password);
-    const uri = 'http://localhost:8080/register';
-    this.body = {
-      username: this.username,
-      password: this.password
+    if(this.username && this.password){
+      const uri = 'http://localhost:8080/register';
+      this.body = {
+        username: this.username,
+        password: this.password
+      }
+    const res = await fetch(uri,{
+      method:"POST",
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body:JSON.stringify(this.body)
+      }).then(response => {
+        console.log("success: ", response);
+        response.text();
+        if(response.status === 201){
+          alert("Registeration Successful");
+          this.router.navigate(['/']);
+        }else{
+          alert("Registeration Failed");
+          window.location.reload();
+        }
+      }).catch((err)=>{
+          console.log(err);
+          window.alert('fetch cant be performed for register');
+          alert(err.message);
+          this.router.navigate(['/']);
+      });
+      console.log("res",res);
+    }else{
+      alert("Please enter username and password");
     }
-  //   this.requestOptions = {
-  //     method: 'POST',
-  //     headers: new Headers(),
-  //     body: this.body,
-  //     redirect: 'follow'
-  //   };
-  //   console.log("body: ", this.body);
-  //   fetch(uri, this.requestOptions)
-  //     .then(response => response.text())
-  //     .then(result => {
-  //       console.log("success: ",result);
-  //       this.router.navigate(['/subscriptions']);
-  //     })
-  //     .catch(error => console.log('error', error));
-  // }
-  const res = await fetch(uri,{
-    method:"POST",
-    headers:{
-      "Content-Type" : "application/json"
-    },
-    body:JSON.stringify(this.body)
-    }).catch((err)=>{
-        console.log(err);
-        window.alert('fetch cant be performed for register');
-        alert(err.message);
-        this.router.navigate(['/']);
-    });
-    console.log("res",res);
-    alert("registeration success");
-    this.router.navigate(['/']);
+
   }
 }

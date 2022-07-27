@@ -15,6 +15,17 @@ export interface EventData {
 })
 export class InputService {
 
+
+  showScript = false;
+
+  setScript(b: boolean){
+    this.showScript = b;
+  }
+
+  getScript(){
+    return this.showScript;
+  }
+
   eventName: string;
   eventTitle: string;
 

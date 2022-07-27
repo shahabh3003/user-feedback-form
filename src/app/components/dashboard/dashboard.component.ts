@@ -1,3 +1,4 @@
+import { InputService } from './../../services/input.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   scriptContent: string = '';
-  showModal: boolean = false;
+  showModal: boolean = this.inputService.getScript();
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public inputService: InputService) { }
 
   ngOnInit(): void {
   }
