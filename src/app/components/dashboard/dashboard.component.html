@@ -21,7 +21,7 @@
           <h3 class="font-semibold" >Congratulations!!! You have successfully created your User-feedback form</h3>
           <input type="text" class="mt-4 p-2 border-2 rounded-md" placeholder="Copy the script to embed form in your website" size="50" [value]="this.inputService.getScriptLink()" />
           <br>
-          <button class="bg-cyan-800 text-white p-2 rounded-lg m-1 items-center" (click)="this.inputService.setScript(false)">Copy</button>
+          <button class="bg-cyan-800 text-white p-2 rounded-lg m-1 items-center" (click)="copyScript()">Copy</button>
         </div>
       </div>
     </div>

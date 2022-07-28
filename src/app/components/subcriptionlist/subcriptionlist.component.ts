@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './subcriptionlist.component.html',
   styleUrls: ['./subcriptionlist.component.css']
 })
+
 export class SubcriptionlistComponent implements OnInit {
 
   subscriptionList: any = [];

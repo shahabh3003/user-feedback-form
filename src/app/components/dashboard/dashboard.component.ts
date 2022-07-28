@@ -34,4 +34,8 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/userform']);
   }
 
+  copyScript () {
+    this.inputService.setScript(false);
+    window.location.reload();
+  }
 }
