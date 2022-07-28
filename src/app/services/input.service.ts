@@ -15,7 +15,7 @@ export interface EventData {
 })
 export class InputService {
 
-
+  // show script modal
   showScript = false;
 
   setScript(b: boolean){
@@ -24,6 +24,17 @@ export class InputService {
 
   getScript(){
     return this.showScript;
+  }
+
+  // show script link
+  scriptLink: string = '';
+
+  setScriptLink(scriptLink: string){
+    this.scriptLink = scriptLink;
+  }
+
+  getScriptLink(){
+    return this.scriptLink;
   }
 
   eventName: string;

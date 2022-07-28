@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   position: fixed;
-  top: 650px;
+  top: 750px;
   left: 500px;
   border: 2px solid black;
 }

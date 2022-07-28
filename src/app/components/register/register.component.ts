@@ -47,7 +47,6 @@ export class RegisterComponent implements OnInit {
           alert(err.message);
           this.router.navigate(['/']);
       });
-      console.log("res",res);
     }else{
       alert("Please enter username and password");
     }

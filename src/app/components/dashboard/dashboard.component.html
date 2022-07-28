@@ -1,6 +1,6 @@
 <div class="feedback">
   <div class="feedback-data-left">
-    <app-form class="border-solid border-2 rounded-md"></app-form>
+    <app-form class="border-solid border-2 rounded-md shadow-xl"></app-form>
   </div>
   <div class="feedback-data-right">
     <app-formdesign class=" p-3 border-solid border-l-2"></app-formdesign>
@@ -19,7 +19,7 @@
       <div class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <h3 class="font-semibold" >Congratulations!!! You have successfully created your User-feedback form</h3>
-          <input type="text" class="mt-4 p-2 border-2 rounded-md" placeholder="Copy the script to embed form in your website" size="50" />
+          <input type="text" class="mt-4 p-2 border-2 rounded-md" placeholder="Copy the script to embed form in your website" size="50" [value]="this.inputService.getScriptLink()" />
           <br>
           <button class="bg-cyan-800 text-white p-2 rounded-lg m-1 items-center" (click)="this.inputService.setScript(false)">Copy</button>
         </div>

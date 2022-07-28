@@ -14,6 +14,7 @@ export class FormdesignComponent implements OnInit {
   eventName: string;
   eventTitle: string;
   cadence: number;
+  formId: string;
   body = {};
 
   eventDetails: EventData[] = [];
@@ -22,6 +23,28 @@ export class FormdesignComponent implements OnInit {
     public authService: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  fetchScriptLink(){
+    const uri = 'http://localhost:8080/getScriptTag';
+    fetch(uri,{
+      method:"POST",
+      headers:{
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+          id: this.formId
+        })
+      })
+      .then(res => res.text())
+      .then(res => {
+        console.log("Script tag response: ", res);
+        this.inputService.setScriptLink(res);
+        console.log("Script Link: ", this.inputService.getScriptLink());
+      }).catch((err)=>{
+          console.log(err);
+          alert('fetch cant be performed for script tag');
+      });
   }
 
   async onSubmit(){
@@ -51,11 +74,15 @@ export class FormdesignComponent implements OnInit {
       })
       .then(res => res.json())
       .then(res => {
-        //console.log("Success response: ", res);
+        console.log("Success response: ", res);
+        this.formId = res.id;
+        console.log("Form Id: ", this.formId);
       })
       .catch((err)=>{
           console.log(err);
           alert('fetch cant be performed for formdesign');
       });
+      this.fetchScriptLink();
     }
+
 }
